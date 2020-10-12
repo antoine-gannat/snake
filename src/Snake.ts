@@ -80,22 +80,26 @@ export default class Snake {
       case Direction.UP:
         newHeadPosition.y =
           newHeadPosition.y - 1 < 0
-            ? GameMapSize.height
+            ? GameMapSize.height - 1
             : newHeadPosition.y - 1;
         break;
       case Direction.DOWN:
         newHeadPosition.y =
-          newHeadPosition.y + 1 > GameMapSize.height
+          newHeadPosition.y + 1 >= GameMapSize.height
             ? 0
             : newHeadPosition.y + 1;
         break;
       case Direction.LEFT:
         newHeadPosition.x =
-          newHeadPosition.x - 1 < 0 ? GameMapSize.width : newHeadPosition.x - 1;
+          newHeadPosition.x - 1 < 0
+            ? GameMapSize.width - 1
+            : newHeadPosition.x - 1;
         break;
       case Direction.RIGHT:
         newHeadPosition.x =
-          newHeadPosition.x + 1 > GameMapSize.width ? 0 : newHeadPosition.x + 1;
+          newHeadPosition.x + 1 >= GameMapSize.width
+            ? 0
+            : newHeadPosition.x + 1;
         break;
     }
     // check colision with map elements
