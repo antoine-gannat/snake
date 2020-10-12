@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "commonjs",
+    "module": "es6",
     "removeComments": true,
+    "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "outDir": "dist"
