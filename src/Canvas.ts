@@ -19,13 +19,16 @@ export default class Canvas {
 
   // resize the canvas to the size of the window
   private resizeCanvas() {
-    this.ctx.canvas.width = window.innerWidth;
-    this.ctx.canvas.height = window.innerHeight;
-
+    const smallestSide =
+      window.innerWidth < window.innerHeight
+        ? window.innerWidth
+        : window.innerHeight;
     this.cellSizeInPixels = {
-      width: this.ctx.canvas.width / GameMapSize.width,
-      height: this.ctx.canvas.height / GameMapSize.height,
+      width: smallestSide / GameMapSize.width,
+      height: smallestSide / GameMapSize.height,
     };
+    this.ctx.canvas.width = smallestSide;
+    this.ctx.canvas.height = smallestSide;
   }
 
   // clear the canvas
