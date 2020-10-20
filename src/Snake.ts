@@ -45,7 +45,8 @@ export default class Snake {
 
     switch (cellContent) {
       case MapElement.SNAKE:
-        throw new Error("You lost !!");
+        alert("You lost ! Score: " + this.bodyParts.length * 10);
+        window.location.reload();
       case MapElement.FRUIT:
         this.grow = true;
         map.delete(newHeadPosition);
