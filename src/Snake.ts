@@ -1,4 +1,3 @@
-import { throws } from "assert";
 import { GameMapSize } from "./Game";
 import GameMap from "./GameMap";
 import { MapElement, Position } from "./utils";

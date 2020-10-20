@@ -8,15 +8,10 @@ export default class Canvas {
   private cellSizeInPixels: Size;
 
   constructor() {
-    // get the canvas and the canvas context
-    if (
-      !(this.canvas = document.getElementById(
-        "game-canvas"
-      ) as HTMLCanvasElement) ||
-      !(this.ctx = this.canvas.getContext("2d"))
-    ) {
-      throw new Error("Canvas not found.");
-    }
+    // create the canvas and get the canvas context
+    this.canvas = document.createElement("canvas");
+    document.body.appendChild(this.canvas);
+    this.ctx = this.canvas.getContext("2d");
     this.resizeCanvas();
     // reize the canvas on window resize
     window.addEventListener("resize", this.resizeCanvas.bind(this));
