@@ -1,6 +1,8 @@
 # Snake
 
-Just wanted to have fun coding a web version of Snake
+Web version of the Snake arcade game.
+
+Live version here : https://antoine-gannat.github.io/snake/
 
 ## Usage
 
